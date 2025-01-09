@@ -101,7 +101,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="15dp"
-                        android:background="#ffff"/>
+                        android:background="#ffff">
+
+                        <TextView
+                            android:id="@+id/parkingnum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="차번호" />
+                    </LinearLayout>
+
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="80dp"
@@ -113,18 +124,35 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="15dp"
-                        android:background="#ffff"/>
+                        android:background="#ffff">
+                        <TextView
+                            android:id="@+id/parkingnum2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="차번호" />
+                    </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                 android:layout_width="80dp"
                 android:layout_height="140dp"
                 android:background="#000000"
                 android:text="1">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="15dp"
-                    android:background="#ffff"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:background="#ffff">
+
+                        <TextView
+                            android:id="@+id/parkingnum3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="차번호" />
+                    </LinearLayout>
             </LinearLayout>
             </TableRow>
         </TableLayout>
