@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 import android.os.Handler
 import android.os.Looper
+import java.util.Date
 
 class MycarActivity : AppCompatActivity() {
     private val handler = Handler(Looper.getMainLooper())
@@ -33,17 +34,23 @@ class MycarActivity : AppCompatActivity() {
             binding.jare.text = "남은자리: $availableSpots/3"
             binding.Mynumber.text = "차량번호: ${latestLog.carNum}번"
             binding.seatinfo.text = "주차자리 1번"
-            binding.Mytime.text = "주차한 시간: ${latestLog.eventTime}"
 
-            val eventTimeMillis = SimpleDateFormat("yyyy-MM-dd hh:mm:ss", Locale.getDefault())
-                .parse(latestLog.eventTime)?.time ?: 0L
+            // 현재 날짜와 eventTime 결합
+            val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(System.currentTimeMillis())
+            val completeEventTime = "$currentDate ${latestLog.eventTime}"
+
+            // 날짜와 시간 모두를 포함한 형식으로 파싱
+            val eventTimeMillis = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+                .parse(completeEventTime)?.time ?: 0L
 
             updateRunnable = object : Runnable {
                 override fun run() {
-                    val totalMinutes = (getTime() - eventTimeMillis) / 1 //(1000 * 60)
+                    val currentTimeString = SimpleDateFormat("hh:mm:ss", Locale.getDefault())
+                        .format(Date(getTime()))
+                    val totalMinutes = (getTime() - eventTimeMillis) / (1000 * 60)
                     val totalCost = (totalMinutes / 30) * 500
                     binding.Myprice.text = "주차 요금: $totalCost 원"
-
+                    binding.Mytime.text = "주차한 시간: ${latestLog.eventTime} ~ $currentTimeString"
                     // 1초마다 반복 실행
                     handler.postDelayed(this, 1000)
                 }
@@ -72,7 +79,7 @@ class MycarActivity : AppCompatActivity() {
     private fun updateParkingStatus(isParked: Boolean) {
         val parkingSpot1 = findViewById<LinearLayout>(R.id.parking_spot1)
         if (isParked) {
-            parkingSpot1.setBackgroundColor(Color.RED)
+            parkingSpot1.setBackgroundColor(Color.BLUE)
         } else {
             parkingSpot1.setBackgroundColor(Color.GREEN)
         }

@@ -32,7 +32,7 @@ class SearchActivity : AppCompatActivity() {
             val editText = binding.number.editableText.toString()
 
             // 임시로 값 넣고 자리를 채운다////////////////////////////////////////
-            dbHelper.insertLog("1234", 1, "2025-01-08 10:30:00")
+            dbHelper.insertLog("1234", 1, "10:30:00")
 
             // 남은 자리를 갱신
 
