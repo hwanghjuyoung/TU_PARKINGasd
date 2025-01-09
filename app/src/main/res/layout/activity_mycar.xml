@@ -48,6 +48,7 @@
             android:background="#000000"/>
 
         <TextView
+            android:id="@+id/seatinfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -70,16 +71,16 @@
                 android:textSize="25dp" />
 
         </LinearLayout>
-            <TextView
-                android:id="@+id/Myprice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="4dp"
-                android:gravity="left"
-                android:text="요금"
-                android:textColor="#FF0000"
-                android:textSize="20dp" />
+        <TextView
+            android:id="@+id/Myprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="4dp"
+            android:gravity="left"
+            android:text="요금"
+            android:textColor="#FF0000"
+            android:textSize="20dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,13 +90,19 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp">
+            <TextView
+                android:id="@+id/jare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="남은자리"/>
+
             <TableRow>
 
                 <LinearLayout
+                    android:id="@+id/parking_spot1"
                     android:layout_width="80dp"
                     android:layout_height="140dp"
-                    android:background="#000000"
-                    android:text="1">
+                    android:background="#FF0000">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -107,6 +114,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textAlignment="center"
+                            android:gravity="center"
                             android:layout_weight="1"
                             android:text="차번호" />
                     </LinearLayout>
@@ -116,7 +125,7 @@
                 <LinearLayout
                     android:layout_width="80dp"
                     android:layout_height="140dp"
-                    android:background="#000000"
+                    android:background="#FF0000"
                     android:text="1"
                     android:layout_marginHorizontal="15dp">
                     <LinearLayout
@@ -129,15 +138,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textAlignment="center"
+                            android:gravity="center"
                             android:layout_weight="1"
                             android:text="차번호" />
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
-                android:layout_width="80dp"
-                android:layout_height="140dp"
-                android:background="#000000"
-                android:text="1">
+                    android:layout_width="80dp"
+                    android:layout_height="140dp"
+                    android:background="#FF0000"
+                    android:text="1">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -149,10 +160,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
+                            android:textAlignment="center"
+                            android:gravity="center"
                             android:layout_weight="1"
                             android:text="차번호" />
                     </LinearLayout>
-            </LinearLayout>
+                </LinearLayout>
             </TableRow>
         </TableLayout>
 

@@ -18,8 +18,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     override fun onCreate(db: SQLiteDatabase) {
         // User 테이블 생성
-        db.execSQL("CREATE TABLE User (car_num TEXT PRIMARY KEY)")
-
+//        db.execSQL("CREATE TABLE User (car_num TEXT PRIMARY KEY)")
+    //회원가입 필요없어서 없앰
         // Parking 테이블 생성
         db.execSQL("CREATE TABLE Parking (parking_id TEXT PRIMARY KEY)")
 
@@ -58,8 +58,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         db.execSQL("INSERT INTO Parking (parking_id) VALUES ('안녕동주차장')")
         //주차장은 한국공대만 쓸거고 자리는 세자리만
         db.execSQL("INSERT INTO Parking_spot (parking_id, spot_number, status) VALUES ('한국공대주차장', '1', 0)")
-        db.execSQL("INSERT INTO Parking_spot (parking_id, spot_number, status) VALUES ('한국공대주차장', '2', 0)")
-        db.execSQL("INSERT INTO Parking_spot (parking_id, spot_number, status) VALUES ('한국공대주차장', '3', 0)")
+        db.execSQL("INSERT INTO Parking_spot (parking_id, spot_number, status) VALUES ('한국공대주차장', '2', 1)")
+        db.execSQL("INSERT INTO Parking_spot (parking_id, spot_number, status) VALUES ('한국공대주차장', '3', 1)")
     }
 
 
