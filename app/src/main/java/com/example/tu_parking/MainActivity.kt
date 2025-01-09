@@ -18,20 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        val example = data(1, "A1", true, "1234", "Tu", "03:05:24")
 
         val intent = Intent(applicationContext, SearchActivity::class.java)
 
-        try {
-            sleep(3000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-
         startActivity(intent)
         finish()
-
-
-
     }
 }

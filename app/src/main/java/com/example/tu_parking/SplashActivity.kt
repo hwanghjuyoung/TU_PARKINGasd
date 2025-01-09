@@ -20,6 +20,6 @@ class SplashActivity : AppCompatActivity() {
             startActivity(i)
             // 현재 액티비티 닫기
             finish()
-        }, 1000) // 3초
+        }, 600) // 3초
     }
 }
